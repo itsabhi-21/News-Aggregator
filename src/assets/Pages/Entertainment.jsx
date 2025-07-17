@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-export default function Games() {
+export default function Entertainment() {
   const [articles, setArticles] = useState([]);
-  const [isfullLength,setisfullLength] = useState(false);
+  const [isfullLength, setisfullLength] = useState(false);
 
   const getData = async () => {
     try {
       const res = await fetch(
-        `https://newsapi.org/v2/everything?q=games&apiKey=007e52d97ea54895a759b3cd23f5badd`
+        `https://newsapi.org/v2/everything?q=entertainment&apiKey=007e52d97ea54895a759b3cd23f5badd`
       );
       const data = await res.json();
+      console.log(data)
       setArticles(data.articles);
     } catch (error) {
       console.error('Failed to fetch news:', error);
@@ -47,11 +48,7 @@ export default function Games() {
           </li>
         ))}
       </ul>
-      {/* <Link to='/games' state={{articles}} onClick={()=>setisfullLength(true)} className='text-2xl text-blue-500'>More News...</Link> */}
-      {!isfullLength && (
-        <button onClick={() => setisfullLength(true)} className='text-2xl text-blue-500 block mx-auto'>More News...</button>
-    )}
-      
+      <Link to='/entertainment' state={{articles}} onClick={()=>setisfullLength(true)} className='text-2xl text-blue-500'>More News...</Link>
     </div>
   );
 }

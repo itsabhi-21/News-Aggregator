@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-export default function Games() {
+export default function Entertainment() {
   const [articles, setArticles] = useState([]);
-  const [isfullLength,setisfullLength] = useState(false);
+  const [isfullLength, setisfullLength] = useState(false);
 
   const getData = async () => {
     try {
       const res = await fetch(
-        `https://newsapi.org/v2/everything?q=games&apiKey=007e52d97ea54895a759b3cd23f5badd`
+        `https://newsapi.org/v2/everything?q=exclusive&apiKey=007e52d97ea54895a759b3cd23f5badd`
       );
       const data = await res.json();
+      console.log(data)
       setArticles(data.articles);
     } catch (error) {
       console.error('Failed to fetch news:', error);
@@ -24,7 +25,7 @@ export default function Games() {
   return (
     <div>
       <ul className="flex flex-wrap justify-center mt-24 mb-7">
-        {articles.slice(0,isfullLength ? articles.Length : 12).map((article, index) => (
+        {articles.slice(0, isfullLength ? articles.length : 12).map((article, index) => (
           <li key={index} className="border rounded-lg w-96 p-2 m-4 shadow-2xl flex flex-col ">
             <img src={article.urlToImage} alt={article.title} className="border rounded-md mb-2"/>
             <p className="font-bold text-xl mb-5">{article.title}</p>
@@ -47,11 +48,9 @@ export default function Games() {
           </li>
         ))}
       </ul>
-      {/* <Link to='/games' state={{articles}} onClick={()=>setisfullLength(true)} className='text-2xl text-blue-500'>More News...</Link> */}
       {!isfullLength && (
         <button onClick={() => setisfullLength(true)} className='text-2xl text-blue-500 block mx-auto'>More News...</button>
     )}
-      
     </div>
   );
 }

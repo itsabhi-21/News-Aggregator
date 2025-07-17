@@ -20,19 +20,17 @@ function Footer(){
                 <li><a href="#" className="hover:text-white">Login</a></li>
               </ul>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-2">Follow Us</h3>
-              <div className="flex justify-center md:justify-start space-x-4 mb-2">
-                <a href="#" className="hover:text-white">🌐 Facebook</a>
-                <a href="#" className="hover:text-white">🐦 Twitter</a>
-                <a href="#" className="hover:text-white">📸 Instagram</a>
-              </div>
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-2">Follow Us</h3>
+            <div className="flex justify-center md:justify-start space-x-4 mb-2">
+              <a href="#" className="hover:text-white">🌐 Facebook</a>
+              <a href="#" className="hover:text-white">🐦 Twitter</a>
+              <a href="#" className="hover:text-white">📸 Instagram</a>
+            </div>
       <p className="text-sm mt-2">Contact: support@newsbuzz.com</p>
     </div>
 
   </div>
-
-  {/* Bottom copyright */}
   <div className="text-center text-sm text-gray-500 mt-6">
     &copy; {new Date().getFullYear()} NewsBuzz. All rights reserved.
   </div>
