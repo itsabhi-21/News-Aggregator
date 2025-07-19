@@ -27,16 +27,16 @@ export function Cards() {
       {articles.slice(0, 6).map((article, index) => (
         <li
           key={index}
-          className="relative bg-[#ffffff] backdrop-blur-md border border-cyan-400/10 rounded-2xl shadow-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105 max-w-sm w-full"
+          className="relative bg-[#080a15] backdrop-blur-md border border-white rounded-2xl shadow-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105 max-w-sm w-full"
         >
             <img
               src={article.urlToImage}
               alt={article.title}
-              className="h-48 w-full object-cover rounded-t-2xl"
+              className="h-48 w-full object-cover rounded-t-2xl border-b border-white"
             />
   
           <div className="p-6 flex flex-col flex-grow">
-            <h2 className="text-lg font-semibold text-gray-700 mb-2 line-clamp-2">
+            <h2 className="text-lg font-semibold text-gray-300 mb-2 line-clamp-2">
               {article.title}
             </h2>
   

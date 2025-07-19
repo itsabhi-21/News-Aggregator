@@ -31,14 +31,14 @@ export default function Games() {
       </section>
       <ul className="flex flex-wrap justify-center gap-8 px-4 py-12">
         {articles.slice(0, isfullLength ? articles.length : 12).map((article, index) => (
-          <li key={index} className="relative bg-white backdrop-blur-md border border-cyan-400/10 rounded-2xl shadow-xl overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105 max-w-sm w-full">
+          <li key={index} className="relative bg-[#080a15] backdrop-blur-md border border-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105 max-w-sm w-full">
 
-            <img src={article.urlToImage} alt={article.title} className="h-48 w-full object-cover rounded-t-2xl"/>
+            <img src={article.urlToImage} alt={article.title} className="h-48 w-full object-cover rounded-t-2xl border-white border-b"/>
   
             <div className="p-6 flex flex-col flex-grow">
-              <h2 className="text-lg font-semibold text-gray-700 mb-2 line-clamp-2">{article.title}</h2>
+              <h2 className="text-lg font-semibold text-gray-200 mb-2 line-clamp-2">{article.title}</h2>
 
-              <p className="text-sm text-gray-500 mb-4 flex-grow line-clamp-3">{article.description.slice(0, 120)}...</p>
+              <p className="text-sm text-gray-400 mb-4 flex-grow line-clamp-3">{article.description.slice(0, 120)}...</p>
   
               <p className="ml-auto text-sm text-blue-400 mb-4">- By {article.author ? article.author : "Unknown"}</p>
   

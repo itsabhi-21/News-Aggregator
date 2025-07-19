@@ -3,45 +3,29 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <nav className="bg-red-100 p-7 rounded-xl w-full flex items-center justify-between px-6 py-4 bg-gradient-to-r from-purple-800 via-indigo-900 to-blue-900 shadow-lg">
-      {/* Logo & Search */}
-      <div className="flex justify-between items-center mb-4 text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500">
-        <h1 className="text-red-500 text-3xl font-bold">NewsBuzz</h1>
-        <input
-          type="text"
-          placeholder="Search here"
-          className="border rounded-xl px-2 py-1 w-1/3 shadow cursor-auto"
-        />
+    <nav className="w-full rounded bg-gradient-to-r from-purple-800 via-indigo-900 to-blue-900 shadow-lg px-6 py-4 flex items-center">
+      
+      {/* Logo */}
+      <div className="flex-shrink-0">
+        <h1 className="text-3xl font-bold text-red-500">
+          NewsBuzz
+        </h1>
       </div>
-      <div className="flex justify-center mt-7">
-        <ul className="flex space-x-6 text-lg font-medium">
-          <li>
-            <Link to="/home" className="hover:text-red-500 hover:text-xl">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/games" className="hover:text-red-500 hover:text-xl">
-              Games
-            </Link>
-          </li>
-          <li>
-            <Link to="/entertainment" className="hover:text-red-500 hover:text-xl">
-              Entertainment
-            </Link>
-          </li>
-          <li>
-            <Link to="/exclusive" className="hover:text-red-500 hover:text-xl">
-              Exclusive
-            </Link>
-          </li>
-          <li>
-            <Link to="/login" className="hover:text-red-500 hover:text-xl">
-              Login
-            </Link>
-          </li>
-        </ul>
+
+      {/* Nav Links — flex‑auto + mx-auto centers it */}
+      <ul className="flex flex-grow justify-center space-x-6 text-lg font-medium">
+        <li><Link to="/home" className="hover:text-red-500 transition">Home</Link></li>
+        <li><Link to="/games" className="hover:text-red-500 transition">Games</Link></li>
+        <li><Link to="/entertainment" className="hover:text-red-500 transition">Entertainment</Link></li>
+        <li><Link to="/exclusive" className="hover:text-red-500 transition">Exclusive</Link></li>
+        <li><Link to="/login" className="hover:text-red-500 transition">Login</Link></li>
+      </ul>
+
+      {/* Search on the right */}
+      <div className="flex-shrink-0">
+        <input type="text" placeholder="Search here" className="px-4 py-2 rounded-full bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"/>
       </div>
+
     </nav>
   );
 };

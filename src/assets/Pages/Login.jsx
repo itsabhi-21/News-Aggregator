@@ -1,22 +1,26 @@
-import React from 'react'
-const Login = () => {
-  return (
-    <div>
-        <div>
-            <h1 className='text-center text-4xl font-bold mt-10'>Login</h1>
-            <div className='flex justify-center mt-8'>
-                <form className='border rounded-lg w-96 p-2 m-1 shadow'>
-                    <label htmlFor="username" className='font-bold'>Username:</label>
-                    <input placeholder='Enter username' type="text" id="username" name="username" className='border rounded-md w-full p-2' required/>
-                    <label htmlFor="password" className='font-bold'>Password:</label>
-                    <input placeholder='Enter password' type="password" id="password" name="password" className='border rounded-md w-full p-2' required/>
-                    <button type="submit" className='bg-red-500 text-white rounded-md px-4 py-2 mt-4'>Login</button>
-                    <p className='text-center mt-4'>Don't have a account? <a href='#' className='hover:text-blue-600'>Signup</a></p>
-                </form>
-            </div>
-        </div>
-    </div>
-  )
-}
+import React from 'react';
 
-export default Login
+export default function Login() {
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-[#0C144E] px-4">
+      <div className="bg-[#050A30] text-white p-10 rounded-2xl shadow-xl w-full max-w-md">
+        <h1 className="text-4xl font-bold mb-8 text-center">Login</h1>
+        <form className="flex flex-col gap-6">
+          <div>
+            <label className="block mb-2 font-semibold" htmlFor="username">Username:</label>
+            <input id="username" type="text" placeholder="Enter username" className="w-full px-4 py-3 rounded-lg bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-cyan-400"/>
+          </div>
+          <div>
+            <label className="block mb-2 font-semibold" htmlFor="password">Password:</label>
+            <input id="password" type="password" placeholder="Enter password" className="w-full px-4 py-3 rounded-lg bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-cyan-400"/>
+          </div>
+          <button type="submit" className="w-full mt-3 py-3 rounded-lg bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold hover:opacity-90 transition"> Login</button>
+        </form>
+        <p className="text-center mt-6">
+          Don't have an account?{' '}
+          <a href="#" className="text-cyan-400 hover:underline">Signup</a>
+        </p>
+      </div>
+    </div>
+  );
+}
