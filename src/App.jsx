@@ -12,7 +12,7 @@ import Exclusive from './assets/Pages/Exclusive';
 
 function App() {
   return (
-    <div>
+    <div className='min-h-screen bg-[#050A30] text-white'>
       <Header />
       <Routes>
         <Route path="/details" element={<NewsDetail/>} />
